@@ -1,24 +1,26 @@
 NAME = staticlib.a
 
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+DEBUG_FLAGS = -g -Wall -Wextra -Werror 
 
-SRC = ft_putstr.c\
-      ft_putnbr.c\
-      ft_printf.c\
-      main.c\
+SRC = 	ft_printf.c\
+	ft_putstr.c\
+	ft_putnbr.c\
+	ft_putchar.c\
+	main.c\
 
 
 OBJ = $(SRC:.c=.o)
+
 EXE = program
 
-all: $(NAME) $(EXE) beauty
+DEBUG_EXE = program_gdb
 
-
+all: $(NAME) $(EXE) clean
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	
 
 $(OBJ): $(SRC)
 	$(CC) -c $(CFLAGS) $(SRC)
@@ -26,10 +28,12 @@ $(OBJ): $(SRC)
 $(EXE): $(OBJ)
 	$(CC) $(OBJ) -o $(EXE)
 
+gdb: $(OBJ)
+	$(CC) $(OBJ) $(DEBUG_FLAGS) -o $(DEBUG_EXE)
+	@$(MAKE) clean
+
 clean:
-	@rm -f $(OBJ) $(NAME) $(EXE)
-beauty: 
-	@rm -f $(OBJ) $(NAME)
+	@rm -f $(OBJ) $(NAME) 
 
 re: clean all
 

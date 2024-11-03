@@ -18,15 +18,19 @@ va_start(args, format);
 			i++;
 			ft_putnbr(va_arg (args,int));
 		}
+		else if (format [i] == 'c'){
+			i++;
+			ft_putchar(va_arg(args,int));
+		}
 		else if (format [i] == '%'){
 			i++;
 			write(1,"%",1);
 		}
-		else
-			i++;
 	}
+	if (format[i] != '%'){
 	write(1, &format[i], 1);
 	i++;
+	}
 	}
 va_end (args);
 return (i);

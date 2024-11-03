@@ -5,9 +5,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+int ft_printf(const char *format, ...);
+void ft_putchar(const char c);
 void ft_putstr(const char *str);
 void ft_putnbr(int nb);
-int ft_printf(const char *format, ...);
 int main(void);
 
 #endif
