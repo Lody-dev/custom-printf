@@ -9,6 +9,8 @@ SRC = 	ft_printf.c\
 	ft_putnbr.c\
 	ft_putunbr.c\
 	ft_putchar.c\
+	ft_puthex.c\
+	ft_putbighex.c\
 	main.c\
 
 

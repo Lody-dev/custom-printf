@@ -18,6 +18,10 @@ va_start(args, format);
 				ft_putnbr(va_arg (args,int));
 			else if (format [i] == 'u')
 				ft_putunbr(va_arg (args,unsigned int));
+			else if (format [i] == 'x')
+				ft_puthex(va_arg(args,int));
+			else if (format [i] == 'X')
+				ft_putbighex(va_arg(args,int));
 			else if (format [i] == 'c')
 				ft_putchar(va_arg(args,int));
 			else if (format [i] == '%')
