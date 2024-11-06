@@ -1,5 +1,7 @@
 42 Project - ft_printf
+
 Objective
+
 The goal of this project is to implement your own version of the printf function, named ft_printf. This project allows you to learn more about C's variable argument lists, formatting, and the inner workings of how output functions work in C.
 
 Project Requirements
