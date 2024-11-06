@@ -14,8 +14,10 @@ va_start(args, format);
 			i++;
 			if (format[i] == 's')
 				ft_putstr(va_arg(args,char *));
-			else if (format [i] == 'd')
+			else if (format [i] == 'd' || format [i] == 'i')
 				ft_putnbr(va_arg (args,int));
+			else if (format [i] == 'u')
+				ft_putunbr(va_arg (args,unsigned int));
 			else if (format [i] == 'c')
 				ft_putchar(va_arg(args,int));
 			else if (format [i] == '%')

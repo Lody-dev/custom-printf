@@ -7,6 +7,7 @@ DEBUG_FLAGS = -g -Wall -Wextra -Werror
 SRC = 	ft_printf.c\
 	ft_putstr.c\
 	ft_putnbr.c\
+	ft_putunbr.c\
 	ft_putchar.c\
 	main.c\
 
