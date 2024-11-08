@@ -22,6 +22,8 @@ va_start(args, format);
 				ft_puthex(va_arg(args,int));
 			else if (format [i] == 'X')
 				ft_putbighex(va_arg(args,int));
+			else if (format[i] == 'p')
+				ft_putptr(va_arg(args, void*));
 			else if (format [i] == 'c')
 				ft_putchar(va_arg(args,int));
 			else if (format [i] == '%')

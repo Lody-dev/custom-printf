@@ -1,12 +1,13 @@
 #include "lib_printf.h"
 
 int main(void){
+	char *lpd = "w"; 
 	ft_printf("----------------------------------\n");
 	ft_printf("My custom printf: ");
-	ft_printf("custom hexadecimal output: %X\n", -255);
+	ft_printf("Custom pointer output : %p\n", &lpd);
 	ft_printf("----------------------------------\n");
 	ft_printf("Original  printf: ");
-	printf("This is a hexadecimal: %X\n", -255);
+	printf("This is a pointer: %p\n", &lpd);
 	return(0);
 }
 

@@ -1,7 +1,7 @@
 NAME = staticlib.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra 
 DEBUG_FLAGS = -g -Wall -Wextra -Werror 
 
 SRC = 	ft_printf.c\
@@ -11,6 +11,7 @@ SRC = 	ft_printf.c\
 	ft_putchar.c\
 	ft_puthex.c\
 	ft_putbighex.c\
+	ft_putptr.c\
 	main.c\
 
 
