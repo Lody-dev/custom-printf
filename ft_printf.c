@@ -24,7 +24,7 @@ va_start(args, format);
 			else if (format [i] == 'X')
 				ft_putbighex(va_arg(args,int));
 			else if (format[i] == 'p')
-				ft_putptr(va_arg(args, void*));
+				ft_putptr(va_arg(args, unsigned long long));
 			else if (format [i] == 'c')
 				count += ft_putchar(va_arg(args,int));
 			else if (format [i] == '%')

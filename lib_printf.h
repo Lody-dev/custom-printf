@@ -8,10 +8,10 @@
 int ft_printf(const char *format, ...);
 int ft_putchar(const char c);
 int ft_putstr(const char *str);
-void ft_putnbr(int nb);
+int ft_putnbr(int nb);
 void ft_puthex(unsigned int nb);
 void ft_putbighex(unsigned int nb);
-void ft_putptr(void* ptr);
+void ft_putptr(unsigned long long ptr);
 void ft_putunbr(unsigned int nb);
 int main(void);
 
