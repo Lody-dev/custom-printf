@@ -6,8 +6,8 @@
 #include <stdarg.h>
 
 int ft_printf(const char *format, ...);
-void ft_putchar(const char c);
-void ft_putstr(const char *str);
+int ft_putchar(const char c);
+int ft_putstr(const char *str);
 void ft_putnbr(int nb);
 void ft_puthex(unsigned int nb);
 void ft_putbighex(unsigned int nb);
