@@ -1,7 +1,5 @@
 #include "lib_printf.h"
 
-
-
 static int lenth_counter(int nb)
 {
 	int n;
@@ -25,7 +23,7 @@ static void printer(int nb){
 		nb = -nb;
 	}
 	if (nb >= 10) {
-		ft_putnbr(nb / 10);
+		printer(nb / 10);
 		nb = nb % 10;
 	}
 	if (nb < 10) ft_putchar(nb + 48);

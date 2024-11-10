@@ -18,17 +18,20 @@ va_start(args, format);
 			else if (format [i] == 'd' || format [i] == 'i')
 				count += ft_putnbr(va_arg (args,int));
 			else if (format [i] == 'u')
-				ft_putunbr(va_arg (args,unsigned int));
+				count += ft_putunbr(va_arg (args,unsigned int));
 			else if (format [i] == 'x')
-				ft_puthex(va_arg(args,int));
+				count += ft_puthex(va_arg(args,unsigned int));
 			else if (format [i] == 'X')
-				ft_putbighex(va_arg(args,int));
+				count += ft_putbighex(va_arg(args,unsigned int));
 			else if (format[i] == 'p')
 				ft_putptr(va_arg(args, unsigned long long));
 			else if (format [i] == 'c')
 				count += ft_putchar(va_arg(args,int));
 			else if (format [i] == '%')
+			{
+				count++;
 				write(1,"%",1);
+			}
 		}
 		else 
 			write(1, &format[i], 1);
