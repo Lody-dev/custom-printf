@@ -1,6 +1,6 @@
 NAME = staticlib.a
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 DEBUG_FLAGS = -g -Wall -Wextra -Werror 
 
