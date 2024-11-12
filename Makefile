@@ -1,44 +1,47 @@
-NAME = staticlib.a
-
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-DEBUG_FLAGS = -g -Wall -Wextra -Werror 
-
-SRC = 	ft_printf.c\
-	ft_putstr.c\
-	ft_putnbr.c\
-	ft_putunbr.c\
-	ft_putchar.c\
-	ft_puthex.c\
-	ft_putbighex.c\
-	ft_putptr.c\
-	main.c\
+NAME = libftprintf.a  
+CC = cc  
+CFLAGS = -Wall -Wextra -Werror  
 
 
-OBJ = $(SRC:.c=.o)
+DEBUG_FLAGS = -g -Wall -Wextra -Werror
 
-EXE = program
 
-DEBUG_EXE = program_gdb
+SRC = ft_printf.c\
+      ft_putstr.c\
+      ft_putnbr.c\
+      ft_putunbr.c\
+      ft_putchar.c\
+      ft_puthex.c\
+      ft_putbighex.c\
+      ft_putptr.c\
+      main.c  
 
-all: $(NAME) $(EXE) clean
+OBJ = $(SRC:.c=.o)  
+
+
+all: $(NAME)
+
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(SRC)
-	$(CC) -c $(CFLAGS) $(SRC)
 
-$(EXE): $(OBJ)
-	$(CC) $(OBJ) -o $(EXE)
+$(OBJ): %.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 
 gdb: $(OBJ)
-	$(CC) $(OBJ) $(DEBUG_FLAGS) -o $(DEBUG_EXE)
+	$(CC) $(OBJ) $(DEBUG_FLAGS) -o $(NAME)_gdb
 	@$(MAKE) clean
 
+
 clean:
-	@rm -f $(OBJ) $(NAME) 
+	@rm -f $(OBJ) 
 
-re: clean all
+fclean: clean
+	@rm -f $(NAME)
 
-.PHONY: all clean fclean re bonus
+re: fclean all
+
+.PHONY: all clean fclean re gdb
+

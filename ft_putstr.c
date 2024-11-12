@@ -1,4 +1,4 @@
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 int ft_putstr(const char *str){
 int i = 0;

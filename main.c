@@ -1,4 +1,4 @@
-#include "lib_printf.h"
+#include "ft_printf.h" 
 int original_count = 999;
 int custom_count = 999;
  int x = 42;
@@ -11,4 +11,3 @@ int main(void){
 
 	return(0);
 }
-

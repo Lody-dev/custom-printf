@@ -1,4 +1,4 @@
-#include "lib_printf.h"
+#include "ft_printf.h"
 
 static int lenth_counter(int nb)
 {
@@ -9,6 +9,8 @@ static int lenth_counter(int nb)
 	if (n == 0)
 		return(1);
 	i = 0;
+	if(nb < 0)
+		i++;
 	while (n)
 	{
 	n /= 10;
