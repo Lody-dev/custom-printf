@@ -1,6 +1,6 @@
 #include "lib_printf.h"
 
-static void printer(unsigned int nb)
+static void printer(unsigned long nb)
 {
         if(nb >= 16){
                 printer(nb / 16);
@@ -13,9 +13,9 @@ static void printer(unsigned int nb)
 }
 
 
-static int lenth_counter(unsigned int nb) 
+static int lenth_counter(unsigned long nb) 
 { 
-        unsigned int n; 
+        unsigned long n; 
         int i; 
          
         if (nb == 0) 
@@ -38,7 +38,7 @@ static int lenth_counter(unsigned int nb)
 
 
 
-int ft_putptr(unsigned long long nb){
+int ft_putptr(unsigned long nb){
 	int lenth;
 	
 	if(nb == 0)
