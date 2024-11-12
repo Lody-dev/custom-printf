@@ -14,7 +14,7 @@ SRC = ft_printf.c\
       ft_puthex.c\
       ft_putbighex.c\
       ft_putptr.c\
-      main.c  
+	main.c
 
 OBJ = $(SRC:.c=.o)  
 

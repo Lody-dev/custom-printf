@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int lenth_counter(int nb)
+static int lenth_counter(long long nb)
 {
 	int n;
 	int i;
@@ -19,7 +19,7 @@ static int lenth_counter(int nb)
 	return(i);
 }
 
-static void printer(int nb){
+static void printer(long long nb){
 	if (nb < 0) {
 		ft_putchar('-');
 		nb = -nb;
@@ -32,8 +32,9 @@ static void printer(int nb){
 
 }
 
-int	ft_putnbr(int nb) 
+int	ft_putnbr(long long nb) 
 {
+	
 	int lenth;
 	lenth = lenth_counter(nb);
 	printer(nb);

@@ -34,11 +34,8 @@ va_start(args, format);
 			}
 		}
 		else 
-			write(1, &format[i], 1);
+			count += ft_putchar(format[i]);
 		i++;
-		if (format[i] != '%')
-			count++;
-		
 	}
 va_end (args);
 return (count);

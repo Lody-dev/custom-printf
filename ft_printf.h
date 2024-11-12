@@ -8,7 +8,7 @@
 int ft_printf(const char *format, ...);
 int ft_putchar(const char c);
 int ft_putstr(const char *str);
-int ft_putnbr(int nb);
+int ft_putnbr(long long nb);
 int ft_puthex(unsigned int nb);
 int ft_putbighex(unsigned int nb);
 int ft_putptr(unsigned long ptr);
