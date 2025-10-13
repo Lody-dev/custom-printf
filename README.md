@@ -1,6 +1,8 @@
-Custom printf Implementation 🌟
+**Custom Printf Implementation written in C** 🌟
 
-Welcome to my custom implementation of the printf function, created as part of my journey at 42 School! This project demonstrates my ability to handle low-level programming challenges, optimize code for efficiency, and apply foundational knowledge gained from earlier projects like Libft.
+A custom implementation of the standard **C printf** function, built from scratch to understand formatted output handling at a low level.
+
+This project explores how variadic functions, format parsing, and buffer management work behind the scenes in C.
 
 🚀 Features
 
