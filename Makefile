@@ -1,47 +1,43 @@
-NAME = libftprintf.a  
-CC = cc  
-CFLAGS = -Wall -Wextra -Werror  
+NAME    = ft_printf.a
+CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror -Iincludes
 
+# --- Folders ---
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = lib 
 
-DEBUG_FLAGS = -g -Wall -Wextra -Werror
+# --- Files ---
+SRC     = $(wildcard $(SRC_DIR)/*.c)
+OBJ     = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+HEADER  = $(wildcard $(INC_DIR)/*.h)
 
-
-SRC = ft_printf.c\
-      ft_putstr.c\
-      ft_putnbr.c\
-      ft_putunbr.c\
-      ft_putchar.c\
-      ft_puthex.c\
-      ft_putbighex.c\
-      ft_putptr.c\
-	main.c
-
-OBJ = $(SRC:.c=.o)  
-
-
+# --- Default Target ---
 all: $(NAME)
 
-
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+	@echo "🔧 Linking $(NAME)..."
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "✅ Build complete!"
 
+# --- Compile .c → .o ---
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER) | $(OBJ_DIR)
+	@echo "🧩 Compiling $<..."
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ): %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# --- Ensure obj/ folder exists ---
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
-
-gdb: $(OBJ)
-	$(CC) $(OBJ) $(DEBUG_FLAGS) -o $(NAME)_gdb
-	@$(MAKE) clean
-
-
+# --- Cleanup ---
 clean:
-	@rm -f $(OBJ) 
+	@echo "🧹 Removing object files..."
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
+	@echo "🗑️  Removing executable..."
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re gdb
-
+.PHONY: all clean fclean re

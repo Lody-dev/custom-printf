@@ -34,8 +34,8 @@ static void printer(long long nb){
 
 int	ft_putnbr(long long nb) 
 {
-	
 	int lenth;
+
 	lenth = lenth_counter(nb);
 	printer(nb);
 	return(lenth);
